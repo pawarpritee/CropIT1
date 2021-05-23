@@ -1,0 +1,26 @@
+<div *ngFor="let deal of deals" class="blog-post">
+  <div class="blog-post-img1">
+    <img src= "assets/imgs/company6.jpeg" alt="tree">
+  </div>
+  <div class="blog-post-info">
+    <div class="blog-post-title">
+      <h2>{{deal?.posting?.addedBy?.user?.name}}</h2>
+
+    </div>
+    <div class="blog-post-date">
+     <b> <span>Material: </span></b>
+      <span>{{deal?.posting?.material?.name}}</span><br>
+
+    <b> <span>Cost: </span></b>
+    <span>{{deal?.posting?.cost}}rs /acre</span><br>
+
+    <b> <span>Expiry Date: </span></b>
+    <span>{{deal?.posting?.expiryDate | date}}</span><br>
+  </div>
+  </div>
+</div>
+
+
+
+
+

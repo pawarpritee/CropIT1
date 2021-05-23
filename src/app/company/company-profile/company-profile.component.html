@@ -1,0 +1,19 @@
+<section id="card-bar">
+    <div *ngIf="!company">
+        ...loading
+    </div>
+    <div *ngIf="company" class="card">
+        <div class="card-image">
+            <img [src]="company.profile">
+        </div>
+        <div class="card-text">
+            <span class="card-icon"></span><br><br>
+            <b><span class="name">{{company.name}}</span><br></b><br>
+            <span class="phone">+91{{company.phone}}</span><br>
+            <span class="Address">{{company.address}}</span><br>
+            <span class="pincode">413502</span><br>
+            <br>
+            <button [routerLink]="['../edit']"  type="button" class="btn btn-success">Edit Profile</button>
+        </div>
+    </div>
+</section>

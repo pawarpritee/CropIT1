@@ -1,0 +1,37 @@
+<!-- for navigation bar -->
+<section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><img src="https://img.icons8.com/doodle/96/000000/wheat--v1.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- for mobile phone bar -->
+            <i class="fa fa-bars"></i>
+
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a [routerLink]="['home']" routerLinkActive="active" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['profile']" routerLinkActive="active" class="nav-link">MyProfile</a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['history']" routerLinkActive="active" class="nav-link">MyHistory</a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['orders']" routerLinkActive="active" class="nav-link">MyOrders</a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['transport']" routerLinkActive="active" class="nav-link">Transport</a>
+                </li>
+                <li class="nav-item">
+                    <div id="logout">
+                        <a (click)="authService.logout()" routerLink="/" class="nav-link">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+<router-outlet></router-outlet>

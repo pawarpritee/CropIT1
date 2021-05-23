@@ -1,0 +1,25 @@
+<div *ngFor="let order of orders" class="blog-post">
+  <div class="blog-post-img1">
+    <img src="assets/imgs/farmer.png" alt="tree">
+  </div>
+  <div class="blog-post-info">
+    <div class="blog-post-title">
+      <h2>{{order?.acceptedBy?.user?.name}}</h2>
+
+    </div>
+    <div class="blog-post-date">
+      <b> <span>Delivery date: </span></b>
+      <span>{{order?.posting?.expiryDate | date}}</span><br>
+      <b> <span>Stubble Type: </span></b>
+      <span>{{order?.posting?.material?.name}} </span><br>
+      <b> <span>Stubble Price: </span></b>
+      <span>{{order?.posting?.cost}} Rs /1 Tone</span><br>
+    </div>
+    <div class="blog-post-desc">
+      <b> <span>Location: </span></b>
+      <span>{{order?.acceptedBy?.user?.address}} </span><br>
+    </div>
+  </div>
+</div>
+
+

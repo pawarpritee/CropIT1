@@ -1,0 +1,18 @@
+<div class="login">
+    <form [formGroup]="loginForm">
+        <div class="form-group">
+            <label>Email address</label>
+            <input formControlName="email" type="email" class="form-control" placeholder="Enter email">
+            <small *ngIf="loginForm.get('email').getError('required') && loginForm.get('email').touched" class="text-danger">Please enter email</small>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input formControlName="password" type="password" class="form-control" placeholder="Password">
+        </div>
+        <button (click)="login()" [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">login</button>
+        <button routerLink="../forgotPassword"  class="btn btn-primary" type="button">ForgotPasswod</button>
+        <div>
+            <a routerLink="../register"><small>Click here to register</small></a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+
+<div class="text-center text-danger m-4" *ngIf="!machines.length">
+    <h4>No Rented machines yet</h4>
+</div>
+<div *ngFor="let machine of machines" class="blog-post">
+    <div class="blog-post-img1">
+        <img [src]="machine.machine.image" alt="tree">
+    </div>
+    <div class="blog-post-info">
+        <div class="blog-post-title">
+            <h2>{{machine.machine.name}}</h2>
+
+        </div>
+        <div class="blog-post-date">
+            <b> <span>Price: </span></b>
+            <span>{{machine?.charges}} Rs / </span>
+            <span>1 Day</span><br>
+
+            <b> <span>Address: </span></b>
+            <span>{{machine?.renter?.user?.address}}india, {{machine?.renter?.user?.city}}</span><br>
+
+            <b> <span>Status: </span></b>
+            <span>{{machine?.status}}</span>
+
+
+        </div>
+
+    </div>
+</div>

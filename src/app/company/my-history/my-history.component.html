@@ -1,0 +1,27 @@
+<div class="text-center text-danger" *ngIf="!expiredPosts.length">
+  <h4>No expiredPosts added by you please add</h4>
+</div>
+<div *ngFor="let post of expiredPosts" class="blog-post">
+  <div class="blog-post-img1">
+    <img src="assets/imgs/company7.png" alt="tree">
+  </div>
+  <div class="blog-post-info">
+    <div class="blog-post-title">
+      <h2>{{post.company.user.name}}</h2>
+
+    </div>
+    <div class="blog-post-date">
+      <b> <span>Material: </span></b>
+      <span>{{post.material.name}}</span><br>
+
+      <b> <span>Cost: </span></b>
+      <span>{{post.cost}}rs /acre</span><br>
+
+      <b> <span>Delivery Date: </span></b>
+      <span>June 21 2020</span><br>
+
+      <b> <span>Expiry Date: </span></b>
+      <span>{{post.expiryDate | date: 'MMM dd yyyy' }}</span><br>
+    </div>
+  </div>
+</div>

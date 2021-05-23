@@ -1,0 +1,57 @@
+<div class="login">
+    <form [formGroup]="profileForm">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="file" class="form-control" (change)="uploadFile($event)">
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input formControlName="name" type="text" class="form-control" placeholder="Enter name">
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>phone</label>
+                    <input formControlName="phone" type="text" class="form-control" placeholder="Enter phone">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label>City</label>
+                    <input formControlName="city" type="text" class="form-control" placeholder="Enter city">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <input formControlName="address" type="text" class="form-control" placeholder="Enter address">
+        </div>
+        <div class="form-group">
+            <label>Domain</label>
+            <input formControlName="domain" type="text" class="form-control" placeholder="Enter Domain">
+        </div>
+        <div class="form-group">
+            <label>Material</label>
+            <select (change)="onMaterialSelect()" class="form-control" formControlName="material">
+                <option selected disabled hidden>Select Material</option>
+                <option [ngValue]="material._id" *ngFor="let material of materials">{{material.name}}</option>
+            </select>
+        </div>
+        <div style="margin-left: 20px;" *ngFor="let material of selectedMaterials;index as i">
+            <div class="row">
+                {{material.name}}
+                <p (click)="selectedMaterials.splice(i, 1)" style="margin-left: 20px;" class="text-danger"> X </p>
+            </div>
+        </div>
+        <button (click)="edit()" type="submit" class="btn btn-primary">Edit</button>
+    </form>
+</div>

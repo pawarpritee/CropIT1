@@ -1,0 +1,32 @@
+<div class="rentb">
+<div *ngFor="let machine of machines" class="blog-post">
+  <div class="blog-post-img1">
+    <img [src]="machine.image" alt="tree">
+  </div>
+  <div class="blog-post-info">
+    <div class="blog-post-title">
+      <h2>{{machine.name}}</h2>
+
+    </div>
+    <div class="blog-post-date">
+      <b> <span>Price: </span></b>
+      <span>{{machine.charges}} Rs / </span>
+      <span>1 Day</span><br>
+
+      <b> <span>Address: </span></b>
+      <span>{{machine.renter.user.address}}, {{machine.renter.user.city}}</span><br>
+
+      <b> <span>Status: </span></b>
+      <span>{{machine.status}}</span>
+
+
+    </div>
+    <div class="pb-4">
+      <nz-range-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-range-picker>
+    </div>
+    <div class="blog-post-read-more">
+      <button [disabled]="date.length !== 2" (click)="getOnRent(machine)" class="btn btn-primary" type="button">Get On Rent</button>
+    </div>
+  </div>
+</div>
+</div>
